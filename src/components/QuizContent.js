@@ -16,7 +16,7 @@ export const QuizContent = () => {
     )
   } else if (isStarted && !isOver) {
     return (
-    <div><CurrentQuestion /></div>
+      <div><CurrentQuestion /></div>
     )} else {
     return (<div><Summary /></div>)
   }
