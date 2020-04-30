@@ -23,6 +23,17 @@ export const CurrentQuestion = () => {
     dispatch(quiz.actions.goToNextQuestion())
   }
 
+  const handleColor = (props) => {
+    console.log(props)
+    if (hasAnswer && props.index === question.correctAnswerIndex) {
+      return '#6ed14d' //
+    } else if (hasAnswer && props.index !== question.correctAnswerIndex) {
+      return '#ed4a2d' //
+    } else {
+      return '#e05ed3' //pink
+    }
+  }
+
   const CurrentQuestionContainer = styled.main`
   display: flex;
   flex-direction: column;
@@ -53,7 +64,7 @@ export const CurrentQuestion = () => {
   const AnswerButton = styled.button`
     width: 100px;
     height: 80px;
-    background-color: ${hasAnswer && index === question.correctAnswerIndex ? '#6ed14d' : '#ed4a2d'}
+    background-color: ${handleColor};
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -66,15 +77,14 @@ export const CurrentQuestion = () => {
     -ms-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     margin: 5px;
-
-    &&:hover {
-      background-color: #b51db5;
-    }
-
-    &&:focus {
-      background-color: #b51db5;
-    }
+    cursor: pointer;
   `
+  // &&:hover {
+  //   background-color: #b51db5;
+  // }
+  // &&:focus {
+  //   background-color: #b51db5;
+  // }
 
   const NextButton = styled.button`
     width: 120px;
@@ -94,22 +104,29 @@ export const CurrentQuestion = () => {
     -ms-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     margin: 10px 0 20px 0;
+    cursor: pointer;
 
     &&:hover {
       background-color: #e37629;
     }
+
+    &&:disabled {
+      color: #ccc;
+      background-color: #cf8b00;
+    }
   `
 
   return (
-    <CurrentQuestionContainer className="currentQuestion">
+    <CurrentQuestionContainer>
       <Image src={question.image} alt="Giraffe" />
-      <QuestionText className="questionText">Question: {question.questionText}</QuestionText>
-      <AnswerContainer className="answerContainer">
+      <QuestionText>Question: {question.questionText}</QuestionText>
+      <AnswerContainer>
         {question.options.map((answer, index) => {
           return (
             <AnswerButton
               // className={hasAnswer && index === question.correctAnswerIndex ? 'answerOption green' : 'answerOption'}
               key={index}
+              index={index}
               type="button"
               disabled={hasAnswer}
               onClick={() => handleClick(index)}>
@@ -121,6 +138,7 @@ export const CurrentQuestion = () => {
       <NextButton
         type="button"
         className="moveOn"
+        disabled={!hasAnswer}
         onClick={() => nextClick()}>
         NEXT
       </NextButton>

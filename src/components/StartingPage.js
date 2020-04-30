@@ -6,8 +6,8 @@ const WelcomeContainer = styled.div`
   width:100%;
   display:flex;
   flex-direction: column;
-  align-items:center;
-  text-align:center;
+  align-items: center;
+  text-align: center;
 `
 const WelcomeGreeting = styled.h1`
   font-size: 68px;

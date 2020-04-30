@@ -20,6 +20,7 @@ const StyledStartButton = styled.button`
   -moz-transition: all .4s ease-in-out;
   -ms-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
+  cursor: pointer;
 
   &&:hover {
     background-color: #6b1dcf;

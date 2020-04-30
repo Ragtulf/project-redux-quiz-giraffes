@@ -1,12 +1,20 @@
 import React from 'react'
 import { Score } from 'components/Score'
 import { RestartButton } from 'components/RestartButton'
+import styled from 'styled-components'
 
 export const Summary = () => {
+
+  const SummaryContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+  `
+
   return (
-    <div>
+    <SummaryContainer>
       <Score />
       <RestartButton />
-    </div>
+    </SummaryContainer>
   )
 }
