@@ -16,7 +16,7 @@ A group project using global state with Redux to build a quiz about giraffes
 
 ## How we did it
 
-The Giraffe Quiz was built using React and Redux Toolkit. We started working all eight of us together planning the project and making a rough sketch. Then we made different branches to work on and divided the team into two groups of four. For this project we used useSelector and useDispatch to communicate with redux state. When the parts we could do seperately were ready we merged the branched and finished up together in one group.
+The Giraffe Quiz was built using React and Redux Toolkit. We started working all eight of us together planning the project and making a rough sketch. Then we made different branches to work on and divided the team into two groups of four. For this project we used useSelector and useDispatch to communicate with redux state. When the parts we could do seperately were ready we merged the branches and finished up together in one group.
 
 ## View it live
 
