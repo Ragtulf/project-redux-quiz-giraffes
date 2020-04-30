@@ -39,11 +39,14 @@ export const CurrentQuestion = () => {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin-top: 1em;
 `
+
   const Image = styled.img`
     margin: 30px 0 0 0;
     width: 300px;
   `
+
   const QuestionText = styled.h2`
     font-size: 24px;
     width: 300px;

@@ -21,4 +21,4 @@ The Giraffe Quiz was built using React and Redux Toolkit. We started working all
 ## View it live
 
 It can be viewed here👀: 
-https://focused-brattain-6f44ca.netlify.app
+https://infallible-austin-6c974d.netlify.app
